@@ -3,26 +3,150 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Image Display</title>
+    <title>Home - Dktr Dee</title>
     <style>
+        /* General styling */
         body {
             margin: 0;
-            background-color: #a16b3b; /* Background color */
+            font-family: 'Candara', sans-serif;
+            background: linear-gradient(to bottom right, #4a7c99, #2e4a66);
+            color: #f3f4f7;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding-top: 80px; /* Adjust for navbar height */
+            text-align: center;
         }
-        img {
-            display: block;
-            max-width: 100%; /* Responsive image */
-            height: auto; /* Maintain aspect ratio */
-            margin: 0 auto; /* Center the image */
+
+        /* Navigation bar styling */
+        .navbar {
+            width: 100%;
+            background: rgba(0, 0, 0, 0.3);
+            padding: 15px 0px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 10;
         }
-        .container {
-            text-align: center; /* Center align the image */
+
+        .navbar .logo {
+            max-width: 50px;
+            padding: 0px 30px;
+        }
+
+        /* Navigation Links Styling */
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            flex-wrap: nowrap;
+            list-style-type: none;
+            margin: 0;
+            padding: 0px 30px;
+        }
+
+        .nav-links li {
+            display: inline;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #f3f4f7;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #ffd7a6;
+        }
+
+        /* Centering content in landing page */
+        .landing-container {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            max-width: 800px;
+            padding: 40px 30px;
+            margin: 20px auto;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            color: #f3f4f7;
+            text-align: center;
+        }
+
+        .intro {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        h1 {
+            font-size: 18px;
+            font-weight: 300;
+            margin: 0 0 20px;
+        }
+
+        h2 {
+            font-size: 20px;
+            font-weight: bold;
+            color: #ffd7a6;
+            margin: 20px 0 10px;
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 1.6;
+            margin: 0 0 15px;
+        }
+
+        strong {
+            color: #ffd7a6;
+            font-weight: bold;
+        }
+
+        /* Responsive layout adjustments */
+        @media (max-width: 768px) {
+            .nav-links {
+                flex-direction: column;
+                gap: 10px;
+                align-items: flex-end;
+            }
+
+            .navbar {
+                padding: 10px 20px;
+            }
+
+            .landing-container {
+                margin-top: 120px;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <img src="https://raw.githubusercontent.com/DrDee3a12/DeeRepo/refs/heads/main/StupidSite.png" alt="Your Image">
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <a href="index.html">
+            <img src="logo0.png" alt="Logo" class="logo">
+        </a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+        </ul>
+    </div>
+
+    <!-- Main Landing Container -->
+    <div class="landing-container">
+        <!-- Centered Logo in Content -->
+        <img src="logo0.png" alt="Dktr Dee Logo" class="logo" style="display: block; margin: 0 auto; width: 80px;">
+        
+        <div class="intro">Hey, I'm Dktr Dee</div>
+        <h1>Cybersecurity Enthusiast, MMA Aficionado, Gamer, Stargazer, and Art Lover</h1>
+        
+        <h2>Here's a Repository of Malware:</h2>
+        <p>Explore and learn about various types of malware, their behaviors, and how to protect against them.</p>
+        <p><a href="#malware-repo" style="color: #ffd7a6; text-decoration: underline;">Click here to access the repository</a>.</p>
     </div>
 </body>
 </html>
