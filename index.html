@@ -3,27 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - Dktr Dee</title>
+    <title>About Me - Dktr Dee</title>
     <style>
         /* General styling */
         body {
             margin: 0;
             font-family: 'Candara', sans-serif;
-            background: linear-gradient(to bottom right, #4a7c99, #2e4a66);
+            background: linear-gradient(to bottom right, #1b1b1b, #1b1b1b); /* Matches the index page */
             color: #f3f4f7;
             display: flex;
-            justify-content: center;
-            align-items: center;
+            flex-direction: column; /* Changed to column layout */
+            align-items: center; /* Center content */
             min-height: 100vh;
-            padding-top: 80px; /* Adjust for navbar height */
-            text-align: center;
+            text-align: left;
+            position: relative; /* Added for positioning */
         }
 
         /* Navigation bar styling */
         .navbar {
             width: 100%;
-            background: rgba(0, 0, 0, 0.3);
-            padding: 15px 0px;
+            background: rgba(20, 20, 20, 100);
+            padding: 20px 0px;
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -34,7 +34,7 @@
         }
 
         .navbar .logo {
-            max-width: 50px;
+            max-width: 40px;
             padding: 0px 30px;
         }
 
@@ -63,8 +63,8 @@
             color: #ffd7a6;
         }
 
-        /* Centering content in landing page */
-        .landing-container {
+        /* Container for main content */
+        .container {
             background: rgba(255, 255, 255, 0.1);
             border-radius: 8px;
             max-width: 800px;
@@ -72,25 +72,29 @@
             margin: 20px auto;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
             color: #f3f4f7;
-            text-align: center;
+            text-align: left;
+            margin-top: 80px; /* Adjusted to create space below navbar */
+            flex-grow: 1; /* Allows the container to take available space */
         }
 
         .intro {
             font-size: 24px;
             font-weight: bold;
+            text-align: center;
             margin-bottom: 10px;
         }
         
         h1 {
             font-size: 18px;
             font-weight: 300;
+            text-align: center;
             margin: 0 0 20px;
         }
-
+        
         h2 {
             font-size: 20px;
             font-weight: bold;
-            color: #ffd7a6;
+            color: #00d0da;
             margin: 20px 0 10px;
         }
 
@@ -101,8 +105,35 @@
         }
 
         strong {
-            color: #ffd7a6;
+            color: #00d0da;
             font-weight: bold;
+        }
+
+        /* Bottom Bar Styling */
+        .bottom-bar {
+            background: rgba(0, 0, 0, 10);
+            display: flex;
+            justify-content: center;
+            padding: 10px 0;
+            margin-top: 20px; /* Space between content and bottom bar */
+            width: 100%;
+        }
+
+        /* Social Media Icons */
+        .socials {
+            display: flex;
+            gap: 30px;
+        }
+
+        .socials a {
+            color: #f3f4f7;
+            font-size: 24px; /* Size of the icons */
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .socials a:hover {
+            color: #ffd7a6; /* Hover effect */
         }
 
         /* Responsive layout adjustments */
@@ -117,7 +148,7 @@
                 padding: 10px 20px;
             }
 
-            .landing-container {
+            .container {
                 margin-top: 120px;
             }
         }
@@ -131,22 +162,52 @@
         </a>
         <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
-            <li><a href="About.html">About</a></li>
+            <li><a href="about.html">About</a></li>
             <li><a href="#projects">Projects</a></li>
         </ul>
     </div>
 
-    <!-- Main Landing Container -->
-    <div class="landing-container">
+    <!-- Main Container -->
+    <div class="container">
         <!-- Centered Logo in Content -->
         <img src="logo0.png" alt="Dktr Dee Logo" class="logo" style="display: block; margin: 0 auto; width: 80px;">
         
         <div class="intro">Hey, I'm Dktr Dee</div>
         <h1>Cybersecurity Enthusiast, MMA Aficionado, Gamer, Stargazer, and Art Lover</h1>
         
-        <h2>Here's a Repository of Malware:</h2>
-        <p>Explore and learn about various types of malware, their behaviors, and how to protect against them.</p>
-        <p><a href="#malware-repo" style="color: #ffd7a6; text-decoration: underline;">Click here to access the repository</a>.</p>
+        <h2>About Me:</h2>
+        <p>I’m that blend of tech geek, MMA fanatic, and night-time stargazer who’s always looking to break things (ethically, of course). My days are filled with ethical hacking, OS tweaks, and a mix of martial arts and calisthenics that makes me wonder why I do this to myself. When I’m not hacking or lifting, I’m diving into books on psychology and finance, always on the hunt for self-improvement. I also meditate, probably trying to decipher the secrets of the universe one star at a time. My appreciation for art inspires my creative side and adds color to my tech-filled world!</p>
+        
+        <h2>My Interests:</h2>
+        <p><strong>⚡ Hacking</strong><br>
+        It’s not breaking in if it’s ethical, right? I’m all about network exploration, securing systems, and diving into the guts of technology. I thrive on bare-metal experiences, constantly learning and uncovering new vulnerabilities. Always on the hunt for something “ethical”.</p>
+        
+        <p><strong>🥋 MMA & Calisthenics</strong><br>
+        Why just lift when you can add punches and kicks into the mix? I’ve been doing hardcore calisthenics, mixing in MMA for that extra edge (and bruises). It’s like a DIY fitness adventure, where every day is a chance to expand my skills and discover something new.</p>
+        
+        <p><strong>🧘 Self-Reflection & Stargazing</strong><br>
+        When I need a break from breaking stuff, I’m either meditating or gazing up at the stars, pondering life’s big questions. I’m constantly diving into books on psychology and finance, always seeking self-improvement. Just me, the universe, and maybe a snack or two!</p>
+        
+        <p><strong>🎮 Gaming</strong><br>
+        When all else fails, there’s gaming. Modding, optimizing, and challenging my setup to keep up with the latest titles—it’s my form of relaxation (and a little frustration, let’s be honest).</p>
+
+        <p><strong>🎨 Art Appreciation</strong><br>
+        Art is the spark that fuels my creativity! I love immersing myself in different styles and perspectives. It’s a wonderful reminder of the beauty in the world and often inspires my tech endeavors.</p>
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="bottom-bar">
+        <div class="socials">
+            <a href="https://github.com/DrDee3a12" target="_blank" title="GitHub">
+                <img src="https://img.icons8.com/material-outlined/24/ffffff/github.png" alt="GitHub">
+            </a>
+            <a href="https://www.facebook.com/SPI3a12" target="_blank" title="Facebook">
+                <img src="https://img.icons8.com/material-outlined/24/ffffff/facebook.png" alt="Facebook">
+            </a>
+            <a href="mailto:xcruisermcl@gmail.com" title="Email">
+                <img src="https://img.icons8.com/material-outlined/24/ffffff/mail.png" alt="Email">
+            </a>
+        </div>
     </div>
 </body>
 </html>
