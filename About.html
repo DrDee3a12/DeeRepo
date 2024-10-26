@@ -9,21 +9,21 @@
         body {
             margin: 0;
             font-family: 'Candara', sans-serif;
-            background: linear-gradient(to bottom right, #4a7c99, #2e4a66);
+            background: linear-gradient(to bottom right, #1b1b1b, #1b1b1b); /* Matches the index page */
             color: #f3f4f7;
             display: flex;
-            justify-content: center;
-            align-items: flex-start;
+            flex-direction: column; /* Changed to column layout */
+            align-items: center; /* Center content */
             min-height: 100vh;
-            padding-top: 80px; /* Adjust for navbar height */
             text-align: left;
+            position: relative; /* Added for positioning */
         }
 
         /* Navigation bar styling */
         .navbar {
             width: 100%;
-            background: rgba(0, 0, 0, 0.3);
-            padding: 15px 0px;
+            background: rgba(20, 20, 20, 100);
+            padding: 20px 0px;
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -34,7 +34,7 @@
         }
 
         .navbar .logo {
-            max-width: 50px;
+            max-width: 40px;
             padding: 0px 30px;
         }
 
@@ -73,6 +73,8 @@
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
             color: #f3f4f7;
             text-align: left;
+            margin-top: 80px; /* Adjusted to create space below navbar */
+            flex-grow: 1; /* Allows the container to take available space */
         }
 
         .intro {
@@ -92,7 +94,7 @@
         h2 {
             font-size: 20px;
             font-weight: bold;
-            color: #ffd7a6;
+            color: #00d0da;
             margin: 20px 0 10px;
         }
 
@@ -103,10 +105,37 @@
         }
 
         strong {
-            color: #ffd7a6;
+            color: #00d0da;
             font-weight: bold;
         }
-        
+
+        /* Bottom Bar Styling */
+        .bottom-bar {
+            background: rgba(0, 0, 0, 10);
+            display: flex;
+            justify-content: center;
+            padding: 10px 0;
+            margin-top: 20px; /* Space between content and bottom bar */
+            width: 100%;
+        }
+
+        /* Social Media Icons */
+        .socials {
+            display: flex;
+            gap: 30px;
+        }
+
+        .socials a {
+            color: #f3f4f7;
+            font-size: 24px; /* Size of the icons */
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .socials a:hover {
+            color: #ffd7a6; /* Hover effect */
+        }
+
         /* Responsive layout adjustments */
         @media (max-width: 768px) {
             .nav-links {
@@ -164,6 +193,21 @@
 
         <p><strong>🎨 Art Appreciation</strong><br>
         Art is the spark that fuels my creativity! I love immersing myself in different styles and perspectives. It’s a wonderful reminder of the beauty in the world and often inspires my tech endeavors.</p>
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="bottom-bar">
+        <div class="socials">
+            <a href="https://github.com/DrDee3a12" target="_blank" title="GitHub">
+                <img src="https://img.icons8.com/material-outlined/24/ffffff/github.png" alt="GitHub">
+            </a>
+            <a href="https://www.facebook.com/SPI3a12" target="_blank" title="Facebook">
+                <img src="https://img.icons8.com/material-outlined/24/ffffff/facebook.png" alt="Facebook">
+            </a>
+            <a href="mailto:xcruisermcl@gmail.com" title="Email">
+                <img src="https://img.icons8.com/material-outlined/24/ffffff/mail.png" alt="Email">
+            </a>
+        </div>
     </div>
 </body>
 </html>
