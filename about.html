@@ -9,21 +9,38 @@
         body {
             margin: 0;
             font-family: 'Candara', sans-serif;
-            background: linear-gradient(to bottom right, #1b1b1b, #1b1b1b); /* Matches the index page */
+            background: linear-gradient(to bottom right, #1b1b1b, #1b1b1b);
             color: #f3f4f7;
             display: flex;
-            flex-direction: column; /* Changed to column layout */
-            align-items: center; /* Center content */
+            flex-direction: column;
+            align-items: center;
             min-height: 100vh;
             text-align: left;
-            position: relative; /* Added for positioning */
+            position: relative;
+            animation: fadeInBody 1s ease-out;
         }
+
+        /* Animations */
+        @keyframes fadeInBody {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideInFromTop {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .container {
+    animation: fadeIn 1.2s ease-in; /* Adjust duration as needed */
+	}
+
 
         /* Navigation bar styling */
         .navbar {
             width: 100%;
             background: rgba(20, 20, 20, 100);
-            padding: 20px 0px;
+            padding: 20px 0;
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -31,11 +48,17 @@
             top: 0;
             left: 0;
             z-index: 10;
+            animation: slideInFromTop 1s ease-out;
         }
 
         .navbar .logo {
             max-width: 40px;
-            padding: 0px 30px;
+            padding: 0 30px;
+            animation: fadeIn 1.5s ease-out;
+        }
+		
+		.navbar .logo:hover {
+            transform: scale(1.1);
         }
 
         /* Navigation Links Styling */
@@ -45,22 +68,19 @@
             flex-wrap: nowrap;
             list-style-type: none;
             margin: 0;
-            padding: 0px 30px;
-        }
-
-        .nav-links li {
-            display: inline;
+            padding: 0 30px;
         }
 
         .nav-links a {
             text-decoration: none;
             color: #f3f4f7;
             font-size: 16px;
-            transition: color 0.3s;
+            transition: color 0.3s, transform 0.3s;
         }
 
         .nav-links a:hover {
-            color: #ffd7a6;
+            color: #00d0da;
+            transform: scale(1.1);
         }
 
         /* Container for main content */
@@ -73,8 +93,9 @@
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
             color: #f3f4f7;
             text-align: left;
-            margin-top: 80px; /* Adjusted to create space below navbar */
-            flex-grow: 1; /* Allows the container to take available space */
+            margin-top: 80px;
+            flex-grow: 1;
+            animation: fadeIn 1.5s ease-out;
         }
 
         .intro {
@@ -82,6 +103,7 @@
             font-weight: bold;
             text-align: center;
             margin-bottom: 10px;
+            animation: fadeIn 2s ease-out;
         }
         
         h1 {
@@ -89,6 +111,7 @@
             font-weight: 300;
             text-align: center;
             margin: 0 0 20px;
+            animation: fadeIn 2.5s ease-out;
         }
         
         h2 {
@@ -96,12 +119,14 @@
             font-weight: bold;
             color: #00d0da;
             margin: 20px 0 10px;
+            animation: fadeIn 2.8s ease-out;
         }
 
         p {
             font-size: 16px;
             line-height: 1.6;
             margin: 0 0 15px;
+            animation: fadeIn 3s ease-out;
         }
 
         strong {
@@ -115,25 +140,23 @@
             display: flex;
             justify-content: center;
             padding: 10px 0;
-            margin-top: 20px; /* Space between content and bottom bar */
+            margin-top: 20px;
             width: 100%;
+            animation: fadeIn 3.2s ease-out;
         }
 
         /* Social Media Icons */
-        .socials {
-            display: flex;
-            gap: 30px;
-        }
-
         .socials a {
             color: #f3f4f7;
-            font-size: 24px; /* Size of the icons */
+            font-size: 24px;
             text-decoration: none;
-            transition: color 0.3s;
+            transition: color 0.3s, transform 0.3s;
+            animation: fadeIn 3.5s ease-out;
         }
 
         .socials a:hover {
-            color: #ffd7a6; /* Hover effect */
+            color: #ffd7a6;
+            transform: scale(1.1);
         }
 
         /* Responsive layout adjustments */
@@ -169,8 +192,7 @@
 
     <!-- Main Container -->
     <div class="container">
-        <!-- Centered Logo in Content -->
-        <img src="logo0.png" alt="Dktr Dee Logo" class="logo" style="display: block; margin: 0 auto; width: 80px;">
+        <img src="logo0.png" alt="Dktr Dee Logo" class="logo" style="display: block; margin: 0 auto; width: 80px; animation: fadeIn 1.5s ease-out;">
         
         <div class="intro">Hey, I'm Dktr Dee</div>
         <h1>Cybersecurity Enthusiast, MMA Aficionado, Gamer, Stargazer, and Art Lover</h1>
@@ -203,11 +225,8 @@
             </a>
             <a href="https://www.facebook.com/SPI3a12" target="_blank" title="Facebook">
                 <img src="https://img.icons8.com/material-outlined/24/ffffff/facebook.png" alt="Facebook">
-            </a>
+				</a>
             <a href="mailto:xcruisermcl@gmail.com" title="Email">
                 <img src="https://img.icons8.com/material-outlined/24/ffffff/mail.png" alt="Email">
             </a>
-        </div>
-    </div>
-</body>
-</html>
+            </
