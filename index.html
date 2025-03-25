@@ -1,348 +1,77 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" >
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - Dktr Dee</title>
-    <style>
-        /* General styling */
-        body {
-            margin: 0;
-            font-family: 'Candara', sans-serif;
-            background: #1a1a1a;
-            color: #f3f4f7;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-            text-align: center;
-            overflow-x: hidden;
-        }
+  <meta charset="UTF-8">
+  <title>Dktr Dee</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+<link  rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto" />
+<link rel="stylesheet" href="https://public.codepenassets.com/css/normalize-5.0.0.min.css">
+<link rel="stylesheet" href="./style.css">
 
-        /* Navbar styling */
-        .navbar {
-            width: 100%;
-            background: rgba(22, 22, 22, 0.95);
-            padding: 20px 0;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            position: fixed;
-            top: 0;
-            z-index: 10;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-        }
-
-        .navbar .logo {
-            max-width: 40px;
-            margin-left: 30px;
-            transition: transform 0.3s ease;
-        }
-
-        .navbar .logo:hover {
-            transform: scale(1.1);
-        }
-
-        /* Navigation Links Styling */
-        .nav-links {
-            display: flex;
-            gap: 20px;
-            list-style-type: none;
-            margin-right: 30px;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: #f3f4f7;
-            font-size: 16px;
-            transition: color 0.3s, transform 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: #00d0da;
-            transform: scale(1.1);
-        }
-
-        /* Landing Container */
-        .landing-container {
-            background: #1a1a1a;
-            border-radius: 10px;
-            max-width: 1000px;
-            height: 500px;
-            padding: 180px 30px;
-            margin: 250px auto 20px;
-            opacity: 0;
-            transform: translateY(20px);
-            animation: fadeIn 1s forwards 0.3s;
-        }
-
-        @keyframes fadeIn {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .intro {
-            font-size: 28px;
-            font-weight: bold;
-            margin-bottom: 10px;
-            color: #00d0da;
-        }
-
-        h1 {
-            font-size: 20px;
-            font-weight: 300;
-            margin: 10px 0 30px;
-        }
-
-        h2 {
-            font-size: 22px;
-            font-weight: bold;
-            color: #00d0da;
-            margin-top: 30px;
-        }
-
-        p {
-            font-size: 16px;
-            line-height: 1.6;
-            margin: 15px 0;
-        }
-
-        /* Profile Picture Animation */
-        .logo-center {
-            width: 100px;
-            display: block;
-            margin: 0 auto 20px;
-            border-radius: 50%;
-            transition: transform 0.5s;
-        }
-
-        /* New Sections Styling */
-        .section-container {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr); /* Two columns */
-            grid-template-rows: auto;   /* Auto height for rows */
-            gap: 20px;                  /* Space between sections */
-            max-height: 100%;
-            margin: 20px auto;
-            max-width: 100%;
-            justify-items: center;      /* Center items horizontally */
-            opacity: 0;
-            transform: translateY(20px);
-            animation: fadeIn 1s forwards 0.3s;
-        }
-		
-		/* Section Styling with Background Images */
-    .section-container .section:nth-child(1) {
-        background-image: url('https://raw.githubusercontent.com/DrDee3a12/DeeRepo/refs/heads/main/Tech.png');
-        background-size: cover;
-        background-position: center;
-    }
-
-    .section-container .section:nth-child(2) {
-        background-image: url('https://raw.githubusercontent.com/DrDee3a12/DeeRepo/refs/heads/main/Book.png');
-        background-size: cover;
-        background-position: center;
-    }
-
-    .section-container .section:nth-child(3) {
-        background-image: url('https://raw.githubusercontent.com/DrDee3a12/DeeRepo/refs/heads/main/gaming.png');
-        background-size: cover;
-        background-position: center;
-    }
-
-    .section-container .section:nth-child(4) {
-        background-image: url('https://raw.githubusercontent.com/DrDee3a12/DeeRepo/refs/heads/main/MMA.png');
-        background-size: cover;
-        background-position: center;
-    }
-
-    /* Additional overlay to improve text readability */
-    .section::after {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.5); /* Dark overlay */
-        opacity: 1;
-        transition: opacity 0.3s ease;
-    }
-
-    .section:hover::after {
-        opacity: 0.3;
-    }
-
-        .section {
-            position: relative;
-            background: rgba(30, 30, 30, 0.95);
-            border-radius: 10px;
-            padding: 20px;
-            color: #f3f4f7;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-            height: 500px;
-            width: 800px;
-            cursor: pointer;
-            overflow: hidden;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        /* Align content based on column */
-        .section:nth-child(odd) {
-            justify-self: end;
-        }
-
-        .section:nth-child(even) {
-            justify-self: start;
-        }
-
-        .section h3 {
-            font-size: 20px;
-            color: #00d0da;
-            margin-bottom: 10px;
-        }
-
-        .section:hover {
-            transform: scale(1.02);
-            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5);
-        }
-
-        .section::after {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(255, 255, 255, 0.1);
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .section:hover::after {
-            opacity: 0.2;
-        }
-
-        /* Button styling removed to make the whole section clickable */
-        
-        /* Bottom Bar Styling */
-        .bottom-bar {
-            background: rgba(0, 0, 0, 0.8);
-            display: flex;
-            justify-content: center;
-            padding: 10px 0;
-            width: 100%;
-            margin-top: auto;
-        }
-
-        /* Social Media Icons */
-        .socials {
-            display: flex;
-            gap: 25px;
-        }
-
-        .socials a img {
-            width: 24px;
-            transition: transform 0.3s, opacity 0.3s;
-        }
-
-        .socials a:hover img {
-            transform: scale(1.3);
-            opacity: 0.8;
-        }
-
-        /* Access Link Styling */
-        .access-link {
-            color: #00d0da;
-            text-decoration: underline;
-            transition: color 0.3s, text-shadow 0.3s;
-        }
-
-        .access-link:hover {
-            color: #00d0da;
-            text-shadow: 0 0 5px #ffd7a6;
-        }
-
-        /* Responsive layout adjustments */
-        @media (max-width: 768px) {
-            .nav-links {
-                flex-direction: column;
-                gap: 10px;
-                align-items: flex-end;
-                margin-right: 20px;
-            }
-            .navbar {
-                padding: 10px 20px;
-            }
-            .landing-container {
-                margin: 180px auto 20px;
-                padding: 40px 20px;
-            }
-            .section-container {
-                grid-template-columns: 1fr; /* Single column on smaller screens */
-            }
-            .section {
-                margin: 10px 0;
-                height: auto; /* Let height be determined by content */
-                aspect-ratio: auto; /* Maintain default aspect ratio on small screens */
-            }
-        }
-    </style>
 </head>
 <body>
-    <!-- Navigation Bar -->
-    <div class="navbar">
-        <a href="index.html">
-            <img src="logo0.png" alt="Logo" class="logo">
+<!-- partial:index.partial.html -->
+<!-- this is the markup. you can change the details (your own name, your own avatar etc.) but don’t change the basic structure! -->
+
+<aside class="profile-card">
+
+    <header>
+    
+        <!-- here’s the avatar -->
+        <a href="/">
+            <img src="logo0.png" />
         </a>
-        <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="#projects">Projects</a></li>
-        </ul>
+        
+        <!-- the username -->
+        <h1>Dktr Dee</h1>
+        
+        <!-- and role or location -->
+        <h2>Curious Adventurer</h2>
+    
+    </header>
+
+    <!-- bit of a bio; who are you? -->
+    <div class="profile-bio">
+    
+        <p>Passionate about cybersecurity, psychology, entrepreneurship. MMA, calisthenics, gaming enthusiast.</p>
+		<i>"Always ready to learn, but not always to be taught."</i>
+    
     </div>
 
-    <!-- Main Landing Container -->
-    <div class="content-wrapper">
-        <div class="landing-container">
-            <img src="logo0.png" alt="Dktr Dee Logo" class="logo-center">
-            <div class="intro">Hey, I'm Dktr Dee</div>
-            <h1>Cybersecurity Enthusiast, MMA Aficionado, Gamer, Stargazer, and Art Lover</h1>
-        </div>
-
-        <!-- New Sections -->
-        <div class="section-container">
-            <div class="section" onclick="window.location.href='Tech.html'">
-                <h3>Hacking</h3>
-                <p>Discover the art of ethical hacking and penetration testing.</p>
-            </div>
-            <div class="section" onclick="window.location.href='art.html'">
-                <h3>Art</h3>
-                <p>Explore my love for art and creative expression.</p>
-            </div>
-            <div class="section" onclick="window.location.href='gaming.html'">
-            </div>
-            <div class="section" onclick="window.location.href='mma.html'">
-                <h3>MMA</h3>
-                <p>Learn about my passion for MMA and fitness.</p>
-            </div>
-        </div>
-    </div>
-
-    <!-- Bottom Bar -->
-    <div class="bottom-bar">
-        <div class="socials">
-            <a href="https://github.com/DrDee3a12" target="_blank" title="GitHub">
-                <img src="https://img.icons8.com/material-outlined/24/ffffff/github.png" alt="GitHub">
+    <!-- some social links to show off -->
+    <ul class="profile-social-links">
+		
+        
+        <!-- twitter - el clásico  -->
+        <li>
+            <a href="https://www.facebook.com/SPI3a12">
+                <svg viewBox="0 0 24 24">
+                    <path fill="#3b5998" d="M17,2V2H17V6H15C14.31,6 14,6.81 14,7.5V10H14L17,10V14H14V22H10V14H7V10H10V6A4,4 0 0,1 14,2H17Z" />
+                </svg>
             </a>
-            <a href="https://www.facebook.com/SPI3a12" target="_blank" title="Facebook">
-                <img src="https://img.icons8.com/material-outlined/24/ffffff/facebook.png" alt="Facebook">
-				</a>
-            <a href="mailto:xcruisermcl@gmail.com" title="Email">
-                <img src="https://img.icons8.com/material-outlined/24/ffffff/mail.png" alt="Email">
-            </a>
-        </div>
-    </div>
+        </li>
+        
+        <!-- envato – use this one to link to your marketplace profile -->
+        <li>
+            <a onclick="trackClick(&#39;profilepic&#39;)" href="https://github.com/DrDee3a12" target="_blank" rel="noopener">
+            <img src="github.png" alt="zalan profile pic">
+          </a>
+        </li>
+        
+        <!-- codepen - your codepen profile-->
+        <li>
+            <a onclick="trackClick(&#39;profilepic&#39;)" href="https://www.instagram.com/dktr_dee/" target="_blank" rel="noopener">
+            <img src="insta.png" alt="zalan profile pic">
+          </a>
+        </li>
+        
+        <!-- add or remove social profiles as you see fit -->
+    
+    </ul>
+
+</aside>
+<!-- that’s all folks! -->
+<!-- partial -->
+  
 </body>
 </html>
